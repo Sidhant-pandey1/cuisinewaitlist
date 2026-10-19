@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #f6edd4;
+  background: #210d0b;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; }
+button, input { font: inherit; }
+
+@layer utilities {
+  .bg-espresso { background: #210d0b; }
+  .text-cream { color: #f6edd4; }
+}
+
+.grain { opacity: .11; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E"); mix-blend-mode: screen; }
+.glow { border-radius: 999px; filter: blur(80px); opacity: .2; }
+.glow-top { right: -12%; top: -18%; width: 45vw; height: 45vw; background: #7d4227; }
+.glow-bottom { left: -15%; bottom: -20%; width: 42vw; height: 42vw; background: #522019; }
+.brand-mark { color: #f6edd4; display: inline-flex; flex-direction: column; line-height: .8; text-decoration: none; }
+.brand-script { font: italic 500 25px/1 'Playfair Display', serif; margin-left: 15px; letter-spacing: .01em; }
+.brand-name { font: 600 16px/1 'Playfair Display', serif; letter-spacing: .16em; }
+.nav-note { color: rgba(246,237,212,.58); font-size: 10px; letter-spacing: .24em; text-transform: uppercase; }
+.eyebrow { align-items: center; color: #d7ad70; display: flex; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; }
+.eyebrow-line { background: #a66e3e; display: inline-block; height: 1px; margin-right: 14px; width: 34px; }
+h1 { font: 500 clamp(3.2rem, 7.2vw, 6.8rem)/.99 'Playfair Display', serif; letter-spacing: -.055em; margin: 28px 0 30px; max-width: 780px; }
+h1 em { color: #d7ad70; font-style: italic; }
+.hero-copy { color: rgba(246,237,212,.7); font-size: 16px; line-height: 1.8; margin: 0; max-width: 490px; }
+.pill-row { display: flex; flex-wrap: wrap; gap: 12px 22px; margin-top: 34px; }
+.pill-row span { align-items: center; color: rgba(246,237,212,.64); display: flex; font-size: 12px; gap: 8px; letter-spacing: .04em; }
+.pill-row svg { color: #d7ad70; }
+.pill-dot { background: #d7ad70; border-radius: 50%; display: inline-block; height: 5px; width: 5px; }
+.form-card { animation: rise .8s ease-out both; background: rgba(250,240,216,.97); border: 1px solid rgba(255,255,255,.22); box-shadow: 0 30px 100px rgba(0,0,0,.28); color: #28120f; padding: clamp(28px, 5vw, 48px); position: relative; }
+.form-card::before { border: 1px solid rgba(166,110,62,.3); content: ''; inset: 10px; pointer-events: none; position: absolute; }
+.card-icon, .card-kicker, .form-card h2, .card-description, .waitlist-form, .privacy-note, .success-state { position: relative; }
+.card-icon { align-items: center; border: 1px solid rgba(100,48,27,.22); border-radius: 50%; color: #8e552e; display: flex; height: 42px; justify-content: center; margin-bottom: 25px; width: 42px; }
+.card-kicker { color: #9b633b; font-size: 10px; letter-spacing: .22em; margin: 0 0 12px; text-transform: uppercase; }
+.form-card h2 { font: 500 clamp(2rem, 4vw, 2.9rem)/1.05 'Playfair Display', serif; letter-spacing: -.04em; margin: 0 0 14px; }
+.card-description { color: rgba(40,18,15,.67); font-size: 14px; line-height: 1.65; margin: 0 0 28px; max-width: 340px; }
+.waitlist-form { display: grid; gap: 17px; }
+.waitlist-form label { display: grid; gap: 8px; }
+.waitlist-form label > span { color: #43211a; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+.waitlist-form small { color: rgba(67,33,26,.48); font-size: 10px; letter-spacing: 0; margin-left: 5px; text-transform: none; }
+.waitlist-form input { background: transparent; border: 0; border-bottom: 1px solid rgba(67,33,26,.3); border-radius: 0; color: #28120f; outline: none; padding: 9px 0 11px; transition: border-color .2s; width: 100%; }
+.waitlist-form input::placeholder { color: rgba(67,33,26,.4); }
+.waitlist-form input:focus { border-color: #8e552e; }
+.submit-button { align-items: center; background: #321612; border: 0; color: #f6edd4; cursor: pointer; display: flex; font-size: 12px; justify-content: space-between; letter-spacing: .08em; margin-top: 8px; padding: 17px 18px; text-transform: uppercase; transition: background .2s, transform .2s; }
+.submit-button:hover { background: #632d1f; transform: translateY(-2px); }
+.submit-button:disabled { cursor: wait; opacity: .7; transform: none; }
+.form-error { color: #9e382d; font-size: 12px; margin: 0; }
+.privacy-note { color: rgba(40,18,15,.48); font-size: 11px; margin: 24px 0 0; text-align: center; }
+.success-state { padding: 32px 0; text-align: center; }
+.success-icon { align-items: center; border: 1px solid #a66e3e; border-radius: 50%; color: #8e552e; display: flex; height: 58px; justify-content: center; margin: 0 auto 26px; width: 58px; }
+.success-state h2 { margin-bottom: 16px; }
+.success-state > p:not(.card-kicker) { color: rgba(40,18,15,.67); font-size: 14px; line-height: 1.65; margin: 0 auto; max-width: 300px; }
+.whatsapp-button { align-items: center; background: #321612; color: #f6edd4; display: inline-flex; font-size: 11px; gap: 8px; justify-content: center; letter-spacing: .08em; margin-top: 28px; padding: 15px 18px; text-decoration: none; text-transform: uppercase; transition: background .2s, transform .2s; }
+.whatsapp-button:hover { background: #632d1f; transform: translateY(-2px); }
+.text-button { align-items: center; background: transparent; border: 0; color: #8e552e; cursor: pointer; display: inline-flex; font-size: 11px; gap: 7px; letter-spacing: .08em; margin-top: 20px; padding: 0; text-transform: uppercase; }
+.card-caption { color: rgba(246,237,212,.42); display: flex; font-size: 10px; justify-content: center; letter-spacing: .18em; margin-top: 18px; text-transform: uppercase; }
+.card-caption span { background: rgba(246,237,212,.3); height: 1px; margin: 7px 11px 0; width: 18px; }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 640px) { .nav-note { font-size: 9px; } h1 { margin-top: 23px; } .form-card { padding: 34px 26px; } footer { font-size: 9px; } }
